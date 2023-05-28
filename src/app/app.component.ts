@@ -11,13 +11,14 @@ export class AppComponent {
   title = 'docker-website';
   users:any = [];
   fruits:any = [];
+  apiPath = "http://localhost:8081";
 
   constructor(private http: HttpClient) {
     this.loadData();
   }
 
   loadData() {
-    this.http.get("http://localhost:8081/users-array").subscribe(response => {
+    this.http.get(this.apiPath + "/users-array").subscribe(response => {
       console.log(response);
       this.users = response;
     },
@@ -27,7 +28,7 @@ export class AppComponent {
     });
 
 
-    this.http.get("http://localhost:8081/get-fruits").subscribe(response => {
+    this.http.get(this.apiPath + "/get-fruits").subscribe(response => {
       console.log(response);
       this.fruits = response;
     },
@@ -47,7 +48,7 @@ export class AppComponent {
       'Content-Type': 'application/json'});
     let options = { headers: headers };
 
-    this.http.post("http://localhost:8081/insert-many",reqbody,options).subscribe(response => {
+    this.http.post(this.apiPath + "/insert-many",reqbody,options).subscribe(response => {
       this.loadData();
     },
     (error:any) =>{
@@ -62,7 +63,7 @@ export class AppComponent {
       'Content-Type': 'application/json'});
     let options = { headers: headers };
 
-    this.http.post("http://localhost:8081/update-record",reqbody,options).subscribe(response => {
+    this.http.post(this.apiPath + "/update-record",reqbody,options).subscribe(response => {
       this.loadData();
     },
     (error:any) =>{
