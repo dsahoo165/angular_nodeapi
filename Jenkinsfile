@@ -25,23 +25,18 @@ pipeline {
 
     stages {
         stage('Installation'){
-            steps {
-                //Recreate/clean the workspace if there is any package update in terms of version change
-              //cleanWs()
-              sh 'npm install --legacy-peer-deps'
-              
+            steps {                
+              sh 'npm install --legacy-peer-deps'              
             }
         }
 
         stage('Build'){
             steps {
-                
-              echo 'ng-build block'
               sh "npm run build"
             }
         }
 
-        stage('Set Configuration') {            
+        stage('Deploy') {            
             steps {
 		    sh 'pwd'
 		    sh 'ls'
@@ -53,17 +48,20 @@ pipeline {
                    secretKeyVariable:'AWS_SECRET_ACCESS_KEY'
                    ]]){
 			
-    // When using a GString at least later Jenkins versions could only handle the env.WORKSPACE variant:
-    echo "Current workspace is ${env.WORKSPACE}"
+            // When using a GString at least later Jenkins versions could only handle the env.WORKSPACE variant:
+            echo "Current workspace is ${env.WORKSPACE}"
 
-    // the current Jenkins instances will support the short syntax, too:
-    echo "Current workspace is $WORKSPACE"
+            // the current Jenkins instances will support the short syntax, too:
+            echo "Current workspace is $WORKSPACE"
 			
-		    //sh "aws s3 cp ${env.WORKSPACE} s3://deepaksahoo.in.website --recursive"
+		    
 		      sh "aws s3 rm s3://deepaksahoo.in.website --recursive"
 		      sh "aws s3 cp dist/docker-website s3://deepaksahoo.in.website --recursive"	
-                      //sh "aws s3 ls" 
-                      //sh "aws ec2 describe-instances"
+                      /*
+                      //sh "aws s3 cp ${env.WORKSPACE} s3://deepaksahoo.in.website --recursive"
+                      sh "aws s3 ls" 
+                      sh "aws ec2 describe-instances"
+                      */
                    }         
             }            
         }
