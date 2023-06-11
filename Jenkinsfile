@@ -37,7 +37,7 @@ pipeline {
             steps {
                 
               echo 'ng-build block'
-              sh "npm build"
+              sh "npm run build"
             }
         }
 
