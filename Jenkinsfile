@@ -36,8 +36,8 @@ pipeline {
         stage('Build'){
             steps {
                 
-              //sh "npm build"
-              sh 'ng build --prod --aot'
+              echo 'insid build block'
+              sh "ng build --prod --aot"
             }
         }
 
