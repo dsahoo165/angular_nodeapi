@@ -26,7 +26,9 @@ pipeline {
     stages {
 
         stage('Build'){
-            sh "npm build-prod"
+            steps {
+              sh "npm build-prod"
+            }
         }
 
         stage('Set Configuration') {            
