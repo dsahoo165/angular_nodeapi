@@ -8,7 +8,7 @@ import { error } from 'util';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'docker-website';
+  title = 'deepaksahoo.in';
   users:any = [];
   fruits:any = [];
   apiPath = "http://localhost:8081";
