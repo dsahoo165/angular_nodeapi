@@ -28,7 +28,7 @@ pipeline {
         stage('Build'){
             steps {
                 //Recreate/clean the workspace if there is any package update in terms of version change
-              cleanWs()
+              //cleanWs()
               sh 'npm install'
               sh "npm build"
             }
