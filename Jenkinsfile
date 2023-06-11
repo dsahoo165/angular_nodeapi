@@ -24,12 +24,18 @@ pipeline {
     // }
 
     stages {
-
-        stage('Build'){
+        stage('Installation'){
             steps {
                 //Recreate/clean the workspace if there is any package update in terms of version change
               //cleanWs()
               sh 'npm install --legacy-peer-deps'
+              
+            }
+        }
+
+        stage('Build'){
+            steps {
+                
               //sh "npm build"
               sh 'ng build --prod --aot'
             }
