@@ -45,7 +45,7 @@ pipeline {
 			
 		    //sh "aws s3 cp ${env.WORKSPACE} s3://deepaksahoo.in.website --recursive"
 		      sh "aws s3 rm s3://deepaksahoo.in.website --recursive"
-		      sh "aws s3 cp app s3://deepaksahoo.in.website --recursive"	
+		      sh "aws s3 cp src s3://deepaksahoo.in.website --recursive"	
                       sh "aws s3 ls" 
                       sh "aws ec2 describe-instances"
                    }         
