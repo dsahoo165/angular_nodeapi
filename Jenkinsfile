@@ -30,7 +30,8 @@ pipeline {
                 //Recreate/clean the workspace if there is any package update in terms of version change
               //cleanWs()
               sh 'npm install --legacy-peer-deps'
-              sh "npm build"
+              //sh "npm build"
+              sh 'ng build --prod --aot'
             }
         }
 
