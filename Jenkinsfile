@@ -55,8 +55,8 @@ pipeline {
             echo "Current workspace is $WORKSPACE"
 			
 		    
-		      sh "aws s3 rm s3://deepaksahoo.in.website --recursive"
-		      sh "aws s3 cp dist/docker-website s3://deepaksahoo.in.website --recursive"	
+		      sh "aws s3 rm s3://dks17 --recursive"
+		      sh "aws s3 cp dist/docker-website s3://dks17 --recursive"	
                       /*
                       //sh "aws s3 cp ${env.WORKSPACE} s3://deepaksahoo.in.website --recursive"
                       sh "aws s3 ls" 
