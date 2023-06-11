@@ -45,7 +45,7 @@ pipeline {
             steps {
 		    sh 'pwd'
 		    sh 'ls'
-                sh 'docker ps -a'
+                //sh 'docker ps -a'
                 withCredentials([[
                    $class:'AmazonWebServicesCredentialsBinding',
                    credentialsId:'jenkins-user',
@@ -62,8 +62,8 @@ pipeline {
 		    //sh "aws s3 cp ${env.WORKSPACE} s3://deepaksahoo.in.website --recursive"
 		      sh "aws s3 rm s3://deepaksahoo.in.website --recursive"
 		      sh "aws s3 cp dist/docker-website s3://deepaksahoo.in.website --recursive"	
-                      sh "aws s3 ls" 
-                      sh "aws ec2 describe-instances"
+                      //sh "aws s3 ls" 
+                      //sh "aws ec2 describe-instances"
                    }         
             }            
         }
