@@ -36,8 +36,8 @@ pipeline {
         stage('Build'){
             steps {
                 
-              echo 'inside ng-build block'
-              sh "npm build --prod --aot"
+              echo 'ng-build block'
+              sh "npm build"
             }
         }
 
