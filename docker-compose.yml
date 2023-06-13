@@ -1,0 +1,10 @@
+version: '3'
+services:
+  ui-app:
+    image: ${IMAGE}:${TAG}
+    ports:
+      - ${PORT_TO_RUN}:80
+    environment:
+      - TAG=${TAG}
+      - IMAGE=${IMAGE}
+      - PORT_TO_RUN=${PORT_TO_RUN}
