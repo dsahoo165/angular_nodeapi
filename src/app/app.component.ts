@@ -11,9 +11,9 @@ export class AppComponent {
   title = 'deepaksahoo.in';
   users:any = [];
   fruits:any = [];
-  apiPath = "http://localhost:8081";
+  //apiPath = "http://localhost:8081";
   //apiPath = "http://deepaksahoo.in:8081";
-  //apiPath = "http://deepaksahoo.in/nodeapi";
+  apiPath = "http://deepaksahoo.in/app1";
 
   constructor(private http: HttpClient) {
     this.loadData();
