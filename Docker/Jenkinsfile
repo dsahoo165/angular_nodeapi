@@ -20,7 +20,7 @@ pipeline {
                 pwd
                 ls
                 docker images
-                echo 'Remove previous images to save space'
+                echo Remove previous images to save space
                 docker rmi -f $(docker images -q dsahoo165/httpd_dk)
                 docker images
                 docker build -t dsahoo165/httpd_dk:${env.BUILD_NUMBER} .
