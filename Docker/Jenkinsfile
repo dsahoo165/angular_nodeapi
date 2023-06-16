@@ -10,7 +10,7 @@ pipeline {
 
         stage('Code Build'){
             steps {
-              sh "npm run build --base-href=/ui/"
+              sh "npm run build"
             }
         }
 
