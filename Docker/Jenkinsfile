@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+     tools {
+        // Specify the Node.js installation by name
+        nodejs 'nodejs'
+      }
     stages {
          stage('Prepare') {
             steps {
@@ -29,13 +32,13 @@ pipeline {
                
                  dir("workspace"){
                     unstash 'build-artifacts'
-					sh "ls"
-					sh 'pwd'
+                    sh "ls"
+                    sh 'pwd'
                    
                    sh 'sudo su'
                    script {
                    sh 'node --version'
-					         //sh 'npm install --legacy-peer-deps'    
+					         sh 'npm install --legacy-peer-deps'    
                    }
                      
                    
