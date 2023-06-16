@@ -16,6 +16,9 @@ pipeline {
               //script {
               //cleanWs()
                    sh 'node --version'
+              sh 'npm cache clean --force'
+sh 'npm install -g npm@latest'
+
 					         sh 'npm install --legacy-peer-deps'    
               sh "npm run build" 
                 //   }
