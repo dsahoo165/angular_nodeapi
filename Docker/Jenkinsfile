@@ -37,6 +37,7 @@ pipeline {
                    sh 'sudo su'
                    script {
                    sh 'node --version'
+                     cleanWs()
 				           sh 'npm install' 
                    sh "npm run build"   
                    sh """
