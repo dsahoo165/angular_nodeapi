@@ -14,7 +14,7 @@ pipeline {
                 sh 'pwd'
                 sh "ls"
               //script {
-              cleanWs()
+              //cleanWs()
                    sh 'node --version'
 					         sh 'npm install --legacy-peer-deps'    
               sh "npm run build" 
