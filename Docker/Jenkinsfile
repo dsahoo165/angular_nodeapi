@@ -27,8 +27,7 @@ pipeline {
             options {
                 skipDefaultCheckout true
             }
-            steps {
-                
+            steps {               
                
                  dir("workspace"){
                     unstash 'build-artifacts'
@@ -38,7 +37,27 @@ pipeline {
                    sh 'sudo su'
                    script {
                    sh 'node --version'
-					         sh 'npm install --legacy-peer-deps'    
+				   sh 'npm install --legacy-peer-deps' 
+                   sh "npm run build"   
+                   sh """
+                        pwd
+                        ls
+                        docker images
+                        docker build -t dsahoo165/angular_ui:${env.BUILD_NUMBER} .
+                        docker images
+                        """
+
+                    sh """
+                        docker ps                 
+                        docker-compose down
+                        
+                        export IMAGE=dsahoo165/angular_ui
+                        export TAG=${env.BUILD_NUMBER}
+                        export PORT_TO_RUN=8082
+                        docker-compose up -d
+                        
+                        docker ps
+                        """    
                    }
                      
                    
