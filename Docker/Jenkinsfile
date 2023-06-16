@@ -29,9 +29,10 @@ pipeline {
 					sh 'pwd'
                    
                    sh 'sudo su'
+                   script {
                    sh 'node --version'
 					         //sh 'npm install --legacy-peer-deps'    
-                    
+                   }
                      
                    
                  }
