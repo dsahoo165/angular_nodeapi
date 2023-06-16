@@ -21,13 +21,12 @@ pipeline {
                 skipDefaultCheckout true
             }
             steps {
-                unstash 'build-artifacts'
-                sh "ls"
-                sh 'pwd'
+                
                
                  dir("workspace"){
-                    sh "ls"
-					sh "pwd"
+                    unstash 'build-artifacts'
+					sh "ls"
+					sh 'pwd'
 					//sh 'npm install --legacy-peer-deps'    
                      /* Compose down and up are required only for first time setup until nginix is running. 
                      Aterwards only default config update is required. */
