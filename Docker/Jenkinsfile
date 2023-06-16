@@ -27,8 +27,9 @@ pipeline {
                     unstash 'build-artifacts'
 					sh "ls"
 					sh 'pwd'
-                   sh 'sudo node -version'
-                   sh 'sudo npm -v'
+                   
+                   sh 'su su'
+                   sh 'npm -v'
 					sh 'npm install --legacy-peer-deps'    
                     
                      
