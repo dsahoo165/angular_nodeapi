@@ -10,10 +10,10 @@ pipeline {
                 }
                 sh 'pwd'
                 sh "ls"
-              script {
+              //script {
                    sh 'node --version'
 					         //sh 'npm install --legacy-peer-deps'    
-                   }
+                //   }
                 stash name: 'build-artifacts', includes: '**/*', excludes: 'workspace**'                
             }
         }
