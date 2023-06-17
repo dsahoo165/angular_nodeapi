@@ -8,12 +8,12 @@ import { error } from 'util';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'deepaksahoo.in';
+  title = 'qa.deepaksahoo.in';
   users:any = [];
   fruits:any = [];
   //apiPath = "http://localhost:8081";
   //apiPath = "http://deepaksahoo.in:8081";
-  apiPath = "http://deepaksahoo.in/api";
+  apiPath = "http://qa.deepaksahoo.in/api";
 
   constructor(private http: HttpClient) {
     this.loadData();
