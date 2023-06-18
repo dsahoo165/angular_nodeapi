@@ -8,7 +8,7 @@ import { error } from 'util';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'qa.deepaksahoo.in ';
+  title = 'it is qa.deepaksahoo.in ';
   users:any = [];
   fruits:any = [];
   //apiPath = "http://localhost:8081";
