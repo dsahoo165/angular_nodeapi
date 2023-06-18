@@ -9,7 +9,7 @@ import { error } from 'util';
 })
 export class AppComponent {
 
-  title = 'Welcome to qa.deepaksahoo.in ';
+  title = '';
 
   users:any = [];
   fruits:any = [];
