@@ -32,7 +32,7 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #1976d2;
+    background-color: #4b974d;
     color: white;
     font-weight: 600;
   }
@@ -332,7 +332,7 @@
     border-radius: 4px;
     border: none;
     color: #ffffff;
-    background-color: #4CAF50;
+    background-color: #548556;
     cursor: pointer;
   }
   
