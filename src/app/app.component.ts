@@ -17,6 +17,10 @@ export class AppComponent {
   apiPath = "http://qa.deepaksahoo.in/api";
 
   constructor(private http: HttpClient) {
+    const queryParams = new URLSearchParams(document.location.search);
+    const redirectUrl = queryParams.get("url");
+    document.location = redirectUrl; // Noncompliant
+    
     this.loadData();
   }
 
