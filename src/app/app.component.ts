@@ -21,6 +21,7 @@ export class AppComponent {
     const redirectUrl = queryParams.get("url");
     document.location = redirectUrl; // Noncompliant
     
+
     this.loadData();
   }
 
